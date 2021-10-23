@@ -25,4 +25,7 @@ COPY download_gecko_and_mono.sh /root/download_gecko_and_mono.sh
 RUN chmod +x /root/download_gecko_and_mono.sh \
     && /root/download_gecko_and_mono.sh "$(dpkg -s wine-${WINE_BRANCH} | grep "^Version:\s" | awk '{print $2}' | sed -E 's/~.*$//')"
 
+# Init wine
+RUN wine cmd.exe /c "exit"
+
 CMD ["/bin/bash"]
