@@ -1,5 +1,5 @@
 ARG BASE_IMAGE="ubuntu"
-ARG TAG="latest"
+ARG TAG="20.04"
 FROM ${BASE_IMAGE}:${TAG}
 
 # Install prerequisites
